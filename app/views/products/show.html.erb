@@ -3,6 +3,9 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @product %>
+<p>
+<%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
+</p>
 
 <div>
   <% if policy(@product).edit? %>
