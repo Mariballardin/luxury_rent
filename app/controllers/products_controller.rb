@@ -32,7 +32,6 @@ def update
   redirect_to product_path(@product)
 end
 
-
 def destroy
   @product = Product.find(params[:id])
   @product.destroy
