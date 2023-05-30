@@ -1,4 +1,28 @@
 <h1>Products#Page</h1>
 
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+
+
+<tbody>
+    <% @products.each do |product|  %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.user %></td>
+        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete,
+      { 'Are you sure?' } %></td>
+
+      </tr>
+      <% end  %>
+  </tbody>
+</table>
+
 <!-- Add a button for creating a new product -->
 <%= link_to 'Add New Product', new_product_path, class: 'btn btn-primary' %>
+
