@@ -6,6 +6,4 @@ class User < ApplicationRecord
   has_many :rentings, dependent: :destroy
 
   validates :email, presence: true, uniqueness: true
-  validates :username, presence: true, length: { maximum: 20 }
-  validates :address, presence: true, length: { maximum: 40 }
 end
