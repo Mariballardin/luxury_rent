@@ -27,7 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_30_082331) do
   end
 
   create_table "rentings", force: :cascade do |t|
-    t.boolean "status"
+    t.boolean "status", boolean: true, default: false
     t.bigint "user_id", null: false
     t.bigint "product_id", null: false
     t.datetime "created_at", null: false
