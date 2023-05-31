@@ -1,7 +1,10 @@
-<h2>example</h2>
+<h2>Available Products</h2>
 
 <p style="color: green"><%= notice %></p>
 
 <p>
 <%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fill %>
+<div><%= @product.description %></div>
+<div><strong>€<%= @product.price %></strong></div>
+
 </p>

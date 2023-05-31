@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :show]
   # include Pundit::Authorization
-  before_action :set_products, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def index
     @products = policy_scope(Product)

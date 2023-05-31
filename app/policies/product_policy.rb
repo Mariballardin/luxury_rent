@@ -9,7 +9,7 @@ class ProductPolicy < ApplicationPolicy
     true
   end
   def new?
-  true
+    true
   end
 
   def create?
@@ -17,23 +17,23 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def show?
-  true
+    true
   end
 
   def edit?
-  is_owner?
+    is_owner?
   end
 
   def update?
-  is_owner?
+    is_owner?
   end
 
   def destroy?
-  is_owner?
+    is_owner?
   end
 
   private
   def is_owner?
-  record.user == user
+    record.user == user
   end
 end
