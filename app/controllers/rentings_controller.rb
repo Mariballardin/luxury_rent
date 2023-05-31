@@ -1,7 +1,4 @@
 class RentingsController < ApplicationController
-<<<<<<< HEAD
-  def index
-=======
   def new
     @product = Product.find(params[:product_id])
     @reservation = Renting.new
@@ -15,15 +12,11 @@ class RentingsController < ApplicationController
     else
       render :new
     end
->>>>>>> 51e4688c412ba20167bf356056e96f48873ab144
   end
 
   def destroy
     @renting = Renting.find(params[:id])
     @renting.destroy
-<<<<<<< HEAD
-    redirect_to rentings_path, notice: 'Renting was successfully deleted.'
-=======
     redirect_to rentings_path, notice: 'Reservation was successfully deleted.'
   end
 
@@ -46,6 +39,5 @@ class RentingsController < ApplicationController
 
   def renting_params
     params.require(:renting).permit() # Adjust the permitted attributes as needed
->>>>>>> 51e4688c412ba20167bf356056e96f48873ab144
   end
 end
