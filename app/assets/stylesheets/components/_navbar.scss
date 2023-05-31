@@ -1,14 +1,28 @@
-.navbar-lewagon {
+.navbar-lr {
   justify-content: space-between;
-  background-color: #faf4ee;
+  background-color: #faf4ee96;
   box-shadow: 0 10px 30px rgba(0,0,0,.11);
-}
 
+  .navbar-collapse {
+    flex-grow: 0;
+  }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+  .navbar-brand img {
+    width: 180px;
+  }
 
-.navbar-lewagon .navbar-brand img {
-  width: 180px;
+  .logo-image {
+    margin-left: 100px;
+    width: 50px; /* Ajuste o valor conforme necessário */
+    height: auto; /* Ajuste o valor conforme necessário */
+    /* Outros estilos que você desejar aplicar à logo */
+  }
+
+  .user-photo {
+    margin-right: 100px;
+    width: 40px; /* Ajuste o valor conforme necessário */
+    height: 40px; /* Ajuste o valor conforme necessário */
+    border-radius: 50%; /* Para tornar a foto redonda, se desejado */
+    /* Outros estilos que você desejar aplicar à foto do usuário */
+  }
 }
