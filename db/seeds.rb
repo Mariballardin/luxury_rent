@@ -1,3 +1,4 @@
+require "open-uri"
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -15,12 +16,14 @@ puts 'creating products'
 
 10.times do
   product = Product.new(
+    user_id: 1,
     category: Faker::Blood.type,
     price: Faker::Commerce.price(range: 10..1000),
     condition: Faker::Emotion.adjective,
     description: Faker::Lorem.sentence(word_count: 8),
-    image: Faker::Placeholdit.image
   )
+  file = URI.open("https://cdn.pixabay.com/photo/2014/09/03/20/15/shoes-434918_1280.jpg")
+  product.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   product.save!
 end
 

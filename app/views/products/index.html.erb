@@ -11,6 +11,7 @@
         <strong>
           <div class="text"><%= product.price %>€</div>
         </strong>
+
         <div class="comands">
           <%= link_to 'Show', product %>
           <% if policy(product).edit?  %>
