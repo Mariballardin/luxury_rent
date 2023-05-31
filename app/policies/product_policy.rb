@@ -13,7 +13,7 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def create?
-  true
+    true
   end
 
   def show?
