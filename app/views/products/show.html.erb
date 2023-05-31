@@ -1,10 +1,32 @@
-<h2>Available Products</h2>
-
-<p style="color: green"><%= notice %></p>
-
-<p>
-<%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fill %>
-<div><%= @product.description %></div>
-<div><strong>€<%= @product.price %></strong></div>
-
-</p>
+<div class="container">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-6 mt-4 text-center">
+      <h2>What is available:</h2>
+      <p style="color: green"><%= notice %></p>
+      <div class="text-center mt-4">
+        <%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fill, class: "rounded" %>
+      </div>
+      <div class="mt-4"><%= @product.description %></div>
+      <div><strong>€<%= @product.price %></strong></div>
+    </div>
+  </div>
+  <div class="row justify-content-between">
+    <div class="col-md-6 mt-4 text-right">
+      <%= link_to products_path do %>
+        <div class="btn btn-primary"> Back </div>
+      <% end %>
+    <div class="col-md-6 mt-4 text-right">
+      <% if policy(@product).edit?  %>
+        <%= link_to edit_product_path do %>
+          <div class="btn btn-primary"> Edit this product </div>
+        <% end %>
+      <% end  %>
+    </div>
+    <div class="col-md-6 mt-4 text-right">
+      <% if policy(@product).destroy?  %>
+        <%= link_to product_path(@product), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+          <div class="btn btn-primary"> Delete this product </div>
+        <% end %>
+      <% end  %>
+    </div>
+  </div>
