@@ -22,7 +22,7 @@ puts 'creating products'
     condition: Faker::Emotion.adjective,
     description: Faker::Lorem.sentence(word_count: 8),
   )
-  file = URI.open("https://cdn.pixabay.com/photo/2014/09/03/20/15/shoes-434918_1280.jpg")
+  file = URI.open("https://source.unsplash.com/featured/?clothes&#{rand}")
   product.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   product.save!
 end

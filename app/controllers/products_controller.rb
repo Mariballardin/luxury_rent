@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :show]
+  before_action :authenticate_user!, except: [:index]
   # include Pundit::Authorization
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
