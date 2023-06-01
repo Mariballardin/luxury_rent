@@ -3,20 +3,7 @@
   <%= f.input :condition %>
   <%= f.input :description, maxlength: 70 %>
   <%= f.input :price %>
-  <%= f.input :photo, as: :file do %>
-  <div class="input-group">
-    <div class="input-group-prepend">
-      <span class="input-group-text btn btn-primary btn-floating">
-        <label for="photo-input" style="margin-bottom: 0;">
-          <i class="fas fa-download"></i>
-        </label>
-      </span>
-    </div>
-    <input type="file" class="form-control" id="photo-input" name="product[photo]" style="display: none;">
-    <label for="photo-input" class="form-control" style="cursor: pointer;">
-      Choose Photo
-    </label>
-  </div>
+  <%= f.input :photo, as: :file %>
   <%= f.button :submit, class: "btn btn-primary mt-4" %>
 <% end %>
-<% end %>
+
