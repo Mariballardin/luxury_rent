@@ -1,5 +1,4 @@
 <h2 class="mb-4">Products</h2>
-
 <div class="row">
   <% @products.each do |product| %>
     <div class="col-md-4 mb-4">
@@ -9,13 +8,12 @@
         <% end %> <!-- Adicione esta linha -->
         <div class="card-body">
           <h5 class="card-title"><%= product.description %></h5>
-          <p class="card-text"><strong><%= product.price %>€</strong></p>
+          <p class="card-text"><strong><%= product.price %>€ day</strong></p>
         </div>
       </div>
     </div>
   <% end %>
 </div>
-
 <br>
 <div class="d-grid gap-2 d-md-flex mb-5 justify-content-md-end">
   <button class="btn btn-primary" type="button">

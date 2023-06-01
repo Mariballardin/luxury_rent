@@ -2,11 +2,14 @@ class RentingsController < ApplicationController
   before_action :authenticate_user!
   # include Pundit::Authorization
 
+  def show
+    @renting = Renting.find(params[:id])
+  end
+
   def new
     @product = Product.find(params[:product_id])
     @renting = Renting.new
     authorize @product
-    @renting = Renting.new
   end
 
   def create
@@ -14,7 +17,7 @@ class RentingsController < ApplicationController
     @renting = @product.rentings.new(renting_params)
     authorize @product
     if @renting.save
-      redirect_to @product, notice: 'Reservation was successfully created.'
+      redirect_to product_path(@product), notice: 'Reservation was successfully created.'
     else
       render :new
     end
@@ -44,6 +47,6 @@ class RentingsController < ApplicationController
   private
 
   def renting_params
-    params.require(:renting).permit() # Adjust the permitted attributes as needed
+    params.require(:renting).permit(:status) # Adjust the permitted attributes as needed
   end
 end
