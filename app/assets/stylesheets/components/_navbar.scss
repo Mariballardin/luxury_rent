@@ -1,8 +1,10 @@
 .navbar-lr {
   justify-content: space-between;
-  background-color: #068ea986;
-  box-shadow: 0 10px 30px rgba(0,0,0,.11);
+  // background-color: #068ea91f;
+  // box-shadow: 0 10px 30px rgba(0,0,0,.11);
   height: auto;
+  border-bottom: 1px solid rgba(211, 211, 211, 0.401);
+
 
   .navbar-collapse {
     flex-grow: 0;
