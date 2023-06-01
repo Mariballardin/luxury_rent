@@ -5,4 +5,9 @@ class RentingPolicy < ApplicationPolicy
       scope.where(user: user)
     end
   end
+
+  def edit?
+    true
+  end
+
 end

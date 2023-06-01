@@ -1,6 +1,6 @@
 class RentingsController < ApplicationController
   # include Pundit::Authorization
-  before_action :set_product, except: [:index]
+  before_action :set_product, except: [:index, :edit]
 
   def index
     @rentings = policy_scope(Renting)
@@ -25,17 +25,18 @@ class RentingsController < ApplicationController
     end
   end
 
+   def destroy
+     @renting = Renting.find(params[:id])
+     @renting.destroy
+     redirect_to rentings_path, notice: 'Reservation was successfully deleted.'
+   end
 
-  # def destroy
-  #   @renting = Renting.find(params[:id])
-  #   @renting.destroy
-  #   redirect_to rentings_path, notice: 'Reservation was successfully deleted.'
-  # end
-
-  # def edit
-  #   @product = Product.find(params[:product_id])
-  #   @renting = Renting.find(params[:id])
-  # end
+  def edit
+    @renting = Renting.find(params[:id])
+    authorize @renting
+    @renting.status = true
+    @renting.save
+  end
 
   # def update
   #   @product = Product.find(params[:product_id])
