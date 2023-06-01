@@ -1,7 +1,14 @@
 class RentingsController < ApplicationController
+  before_action :authenticate_user!
+  # include Pundit::Authorization
+
   def new
     @product = Product.find(params[:product_id])
     @renting = Renting.new
+    authorize @product
+
+    @renting = Renting.new
+
   end
 
   def create
