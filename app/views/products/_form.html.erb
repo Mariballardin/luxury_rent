@@ -1,7 +1,7 @@
 <%= simple_form_for(product) do |f| %>
   <%= f.input :category, collection: Product::CATEGORY %>
   <%= f.input :condition %>
-  <%= f.input :description %>
+  <%= f.input :description, maxlength: 70%>
   <%= f.input :price %>
   <%= f.input :photo, as: :file %>
   <%= f.submit class: "btn btn-primary mt-4" %>
