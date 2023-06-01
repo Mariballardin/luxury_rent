@@ -1,4 +1,4 @@
-<%= simple_form_for(renting) do |f| %>
+<%= simple_form_for [@product, @renting] do |f| %>
   <%= f.input :status %>
   <%= f.submit %>
 <% end %>
