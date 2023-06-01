@@ -4,13 +4,16 @@ class RentingsController < ApplicationController
 
   def new
     @product = Product.find(params[:product_id])
-    @reservation = Renting.new
+    @renting = Renting.new
     authorize @product
+
+    @renting = Renting.new
+
   end
 
   def create
     @product = Product.find(params[:product_id])
-    @renting = @product.reservations.new(reservation_params)
+    @renting = @product.rentings.new(renting_params)
     if @renting.save
       redirect_to @product, notice: 'Reservation was successfully created.'
     else
