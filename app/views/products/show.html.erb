@@ -21,6 +21,12 @@
           <div class="btn btn-primary"> Edit this product </div>
         <% end %>
       <% end  %>
+    <div class="col-md-6 mt-4 text-right">
+      <% if policy(@product).edit?  %>
+        <%= link_to  new_product_renting_path(@product) do %>
+          <div class="btn btn-primary"> Make the reservation </div>
+        <% end %>
+      <% end  %>
     </div>
     <div class="col-md-6 mt-4 text-right">
       <% if policy(@product).destroy?  %>
