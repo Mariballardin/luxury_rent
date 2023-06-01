@@ -6,9 +6,7 @@ class RentingsController < ApplicationController
     @product = Product.find(params[:product_id])
     @renting = Renting.new
     authorize @product
-
     @renting = Renting.new
-
   end
 
   def create

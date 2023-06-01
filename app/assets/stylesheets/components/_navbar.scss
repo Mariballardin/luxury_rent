@@ -1,7 +1,8 @@
 .navbar-lr {
   justify-content: space-between;
-  background-color: #faf4ee96;
+  background-color: #068ea986;
   box-shadow: 0 10px 30px rgba(0,0,0,.11);
+  height: auto;
 
   .navbar-collapse {
     flex-grow: 0;
@@ -13,7 +14,7 @@
 
   .logo-image {
     margin-left: 100px;
-    width: 50px; /* Ajuste o valor conforme necessário */
+    width: 40px; /* Ajuste o valor conforme necessário */
     height: auto; /* Ajuste o valor conforme necessário */
     /* Outros estilos que você desejar aplicar à logo */
   }
@@ -21,7 +22,7 @@
   .user-photo {
     margin-right: 100px;
     width: 40px; /* Ajuste o valor conforme necessário */
-    height: 40px; /* Ajuste o valor conforme necessário */
+    height: auto; /* Ajuste o valor conforme necessário */
     border-radius: 50%; /* Para tornar a foto redonda, se desejado */
     /* Outros estilos que você desejar aplicar à foto do usuário */
   }
