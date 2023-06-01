@@ -10,18 +10,29 @@ class RentingsController < ApplicationController
     @product = Product.find(params[:product_id])
     @renting = Renting.new
     authorize @product
-  end
-
-  def create
-    @product = Product.find(params[:product_id])
-    @renting = @product.rentings.new(renting_params)
-    authorize @product
+    @renting.product = @product
+    @renting.user = current_user
+    @renting.status = false
     if @renting.save
       redirect_to product_path(@product), notice: 'Reservation was successfully created.'
     else
       render :new
     end
   end
+
+  # def create
+  #   @product = Product.find(params[:product_id])
+  #   @renting = Renting.new
+  #   @renting.product = @product
+  #   @renting.user = current_user
+  #   @renting.status = false
+  #   authorize @product
+  #   if @renting.save
+  #     redirect_to @product, notice: 'Reservation was successfully created.'
+  #   else
+  #     render :new
+  #   end
+  # end
 
   def destroy
     @renting = Renting.find(params[:id])
