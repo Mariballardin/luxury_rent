@@ -25,11 +25,11 @@ class RentingsController < ApplicationController
     end
   end
 
-   def destroy
-     @renting = Renting.find(params[:id])
-     @renting.destroy
-     redirect_to rentings_path, notice: 'Reservation was successfully deleted.'
-   end
+  def destroy
+    @renting = Renting.find(params[:id])
+    @renting.destroy
+    redirect_to rentings_path, notice: 'Reservation was successfully deleted.'
+  end
 
   def edit
     @renting = Renting.find(params[:id])
