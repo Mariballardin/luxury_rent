@@ -13,5 +13,4 @@ class RentingPolicy < ApplicationPolicy
   def update?
     true
   end
-
 end

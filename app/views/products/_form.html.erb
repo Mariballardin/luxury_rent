@@ -1,9 +1,8 @@
 <%= simple_form_for(product, html: { multipart: true }) do |f| %>
-  <%= f.input :category, collection: Product::CATEGORY %>
-  <%= f.input :condition %>
-  <%= f.input :description, maxlength: 70 %>
+  <%= f.input :category, collection: Product::CATEGORY, input_html: { class: 'rounded' } %>
+  <%= f.input :condition, input_html: { class: 'rounded' } %>
+  <%= f.input :description, maxlength: 70, input_html: { class: 'rounded' } %>
   <%= f.input :price %>
-  <%= f.input :photo, as: :file, input_html: { id: "photo-input" }, label: '<i class="fas fa-download"></i> Photo'.html_safe %>
-  <%= f.button :submit, class: "btn btn-primary mt-4" %>
+  <%= f.input :photo, as: :file, input_html: { class: 'rounded', id: "photo-input" }, label: '<i class="fas fa-download"></i> Photo'.html_safe %>
+  <%= f.button :submit, class: "btn btn-primary mt-4 rounded" %>
 <% end %>
-

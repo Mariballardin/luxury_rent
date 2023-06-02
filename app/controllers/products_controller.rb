@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @products = policy_scope(Product)
   end
 
   def new
