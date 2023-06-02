@@ -41,7 +41,7 @@ class RentingsController < ApplicationController
     authorize @renting
     @renting.status = true
     @renting.save
-    redirect_to rentings_path, notice: 'Reservation was successfully deleted.'
+    redirect_to rentings_path, notice: 'Reservation was accepted.'
   end
 
   private
