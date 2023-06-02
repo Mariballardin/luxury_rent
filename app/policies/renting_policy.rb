@@ -10,4 +10,8 @@ class RentingPolicy < ApplicationPolicy
     true
   end
 
+  def update?
+    true
+  end
+
 end
