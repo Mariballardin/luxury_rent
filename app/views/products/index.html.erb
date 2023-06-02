@@ -15,19 +15,18 @@
   <% end %>
 </div>
 <br>
-<div class="container">
-<div class="d-grid gap-2 d-md-flex mb-5 justify-content-md-end">
-  <button class="btn btn-primary" type="button">
-    <% if policy(Product).new? %>
-      <%= link_to 'Add New Product', new_product_path, class: 'btn btn-primary' %>
-    <% end %>
-  </button>
-</div>
-<div class="d-grid gap-2 d-md-flex mb-5 justify-content-md-start">
+<div class="d-flex justify-content-between">
+
   <button class="btn btn-primary" type="button">
     <% if policy(Renting).new? %>
       <%= link_to 'Add New Rental', new_product_path, class: 'btn btn-primary' %>
     <% end %>
   </button>
-  </div>
+
+  <button class="btn btn-primary" type="button">
+    <% if policy(Product).new? %>
+      <%= link_to 'Add New Product', new_product_path, class: 'btn btn-primary' %>
+    <% end %>
+  </button>
+
 </div>
