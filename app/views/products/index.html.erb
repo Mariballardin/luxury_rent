@@ -15,7 +15,7 @@
       </div>
     <% end %>
   </div>
-  <br>
+  <div class="d-flex justify-content-between">
   <div class="d-grid gap-2 d-md-flex mb-5 justify-content-md-end">
     <button class="btn btn-primary rounded" type="button">
       <% if policy(Product).new? %>
@@ -23,4 +23,12 @@
       <% end %>
     </button>
   </div>
+  <div class="d-grid gap-2 d-md-flex mb-5 justify-content-md-start">
+    <button class="btn btn-primary rounded" type="button">
+      <% if policy(Product).new? %>
+        <%= link_to 'Your Rentings', rentings_path, class: 'btn btn-primary rounded' %>
+      <% end %>
+    </button>
+  </div>
+</div>
 </div>
