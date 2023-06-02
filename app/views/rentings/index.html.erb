@@ -17,13 +17,14 @@
     <% @products.each do |product| %>
       <% if product.rentings.any? %>
       <% product.rentings.each do |renting| %>
+      <% unless renting.status  %>
         <%= cl_image_tag product.photo.key,  height: 300, width: 400 %>
-      <%# <%= link_to 'Confirm', edit_product_renting_path(product, renting), class: 'btn btn-primary' %>
-      <%= link_to "Confirm", product_renting_path(product, renting), params: { renting: { status: true } }, data: { turbo_confirm: "Are you sure?", turbo_method: :patch}, class: 'btn btn-primary' %>
+      <%= link_to "Confirm", product_renting_path(product, renting), data: { turbo_confirm: "Are you sure?", turbo_method: :patch}, class: 'btn btn-primary' %>
       <%= link_to product_renting_path(product, renting), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
             <div class="btn btn-danger"> Delete </div>
           <% end %>
         <% end %>
+      <% end %>
     <% end %>
   <%end %>
   <% end %>
