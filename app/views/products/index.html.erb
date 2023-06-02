@@ -1,24 +1,26 @@
-<h2 class="mb-4">Products</h2>
-<div class="row">
-  <% @products.each do |product| %>
-    <div class="col-md-4 mb-4">
-      <div class="card">
-        <%= link_to product_path(product) do %> <!-- Adicione esta linha -->
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path product.photo.key %>'); background-size: cover;"></div>
-        <% end %> <!-- Adicione esta linha -->
-        <div class="card-body">
-          <h5 class="card-title"><%= product.description %></h5>
-          <p class="card-text"><strong><%= product.price %>€ day</strong></p>
+<div class="container">
+  <h2 class="mb-4">Products</h2>
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <%= link_to product_path(product) do %> <!-- Adicione esta linha -->
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path product.photo.key %>'); background-size: cover;"></div>
+          <% end %> <!-- Adicione esta linha -->
+          <div class="card-body">
+            <h5 class="card-title"><%= product.description %></h5>
+            <p class="card-text"><strong><%= product.price %>€ day</strong></p>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
-</div>
-<br>
-<div class="d-grid gap-2 d-md-flex mb-5 justify-content-md-end">
-  <button class="btn btn-primary rounded" type="button">
-    <% if policy(Product).new? %>
-      <%= link_to 'Add New Product', new_product_path, class: 'btn btn-primary rounded' %>
     <% end %>
-  </button>
+  </div>
+  <br>
+  <div class="d-grid gap-2 d-md-flex mb-5 justify-content-md-end">
+    <button class="btn btn-primary rounded" type="button">
+      <% if policy(Product).new? %>
+        <%= link_to 'Add New Product', new_product_path, class: 'btn btn-primary rounded' %>
+      <% end %>
+    </button>
+  </div>
 </div>

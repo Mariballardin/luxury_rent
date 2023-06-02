@@ -26,7 +26,7 @@ class RentingsController < ApplicationController
   def destroy
     @renting = Renting.find(params[:id])
     @renting.destroy
-    redirect_to rentings_path, notice: 'Reservatiotn was successfully deleted.'
+    redirect_to rentings_path, notice: 'Reservation was successfully deleted.'
   end
 
   # def edit
@@ -41,6 +41,7 @@ class RentingsController < ApplicationController
     authorize @renting
     @renting.status = true
     @renting.save
+    redirect_to rentings_path, notice: 'Reservation was accepted.'
   end
 
   private
