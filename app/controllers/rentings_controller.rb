@@ -31,22 +31,19 @@ class RentingsController < ApplicationController
      redirect_to rentings_path, notice: 'Reservation was successfully deleted.'
    end
 
-  def edit
+  # def edit
+  #   @renting = Renting.find(params[:id])
+  #   authorize @renting
+  #   @renting.status = true
+  #   @renting.save
+  # end
+
+  def update
     @renting = Renting.find(params[:id])
     authorize @renting
     @renting.status = true
     @renting.save
   end
-
-  # def update
-  #   @product = Product.find(params[:product_id])
-  #   @renting = Renting.find(params[:id])
-  #   if @renting.update(renting_params)
-  #     redirect_to @product, notice: 'Reservation was successfully updated.'
-  #   else
-  #     render :edit
-  #   end
-  # end
 
   private
 
