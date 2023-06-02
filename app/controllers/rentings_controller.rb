@@ -11,24 +11,22 @@ class RentingsController < ApplicationController
     @renting = Renting.find(params[:id])
   end
 
-  def new
+  def create
     @product = Product.find(params[:product_id])
     @renting = Renting.new
     authorize @product
     @renting.product = @product
     @renting.user = current_user
     @renting.status = false
-    if @renting.save
-      redirect_to @product, notice: 'Reservation was successfully created.'
-    else
-      render :new
-    end
+
+
+    redirect_to product_path(@product), notice: 'Reservation was successfully created.'
   end
 
   def destroy
     @renting = Renting.find(params[:id])
     @renting.destroy
-    redirect_to rentings_path, notice: 'Reservation was successfully deleted.'
+    redirect_to rentings_path, notice: 'Reservatiotn was successfully deleted.'
   end
 
   # def edit

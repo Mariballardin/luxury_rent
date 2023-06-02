@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
 
   def show
     @products = policy_scope(Product)
+    @renting = Renting.new
   end
 
   def new
