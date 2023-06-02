@@ -5,6 +5,7 @@ class RentingsController < ApplicationController
   def index
     @rentings = policy_scope(Renting)
     @products = current_user.products
+
   end
 
   def show
@@ -18,7 +19,7 @@ class RentingsController < ApplicationController
     @renting.product = @product
     @renting.user = current_user
     @renting.status = false
-
+    @renting.save
 
     redirect_to product_path(@product), notice: 'Reservation was successfully created.'
   end
