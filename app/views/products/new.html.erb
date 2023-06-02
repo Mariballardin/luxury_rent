@@ -1,13 +1,15 @@
-<h2>Welcome</h2>
-<br>
-<h5>Tell us more about what do you want to rent:</h5>
+<div class="container">
+  <h2>Welcome</h2>
+  <br>
+  <h5>Tell us more about what do you want to rent:</h5>
 
-<%= render 'form', product: @product %>
-<br>
-<div class="row justify-content-between">
-    <div class="col-md-6 mt-0 mb-2 text-right">
-        <%= link_to products_path do %>
-          <div class="btn btn-primary"> Back </div>
-          <% end %>
-    </div>
+  <%= render 'form', product: @product %>
+  <br>
+  <div class="row justify-content-between">
+      <div class="col-md-6 mt-0 mb-2 text-right">
+          <%= link_to products_path do %>
+            <div class="btn btn-primary"> Back </div>
+            <% end %>
+      </div>
+  </div>
 </div>
