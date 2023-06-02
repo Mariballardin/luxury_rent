@@ -25,7 +25,7 @@
     <% end  %>
 
     <% unless policy(@product).edit? %>
-        <%= link_to  new_product_renting_path(@product) do %>
+        <%= link_to  product_rentings_path(@product, @renting), data: {turbo_method: :post } do %>
           <div class="btn btn-success"> Book this product </div>
         <% end %>
       <% end %>
@@ -39,4 +39,7 @@
       <% end %>
     <% end  %>
   </div>
+  <% if notice %>
+    <%= notice %>
+  <% end %>
 </div>
